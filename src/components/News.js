@@ -22,7 +22,7 @@ const News = (props) => {
   //this code use to call api, fetch and update function
   const updateNews = async () => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=385b53e5914b4385b91bd13366d71a13&page=${page}&pageSize=${props.PageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=yourapikey&page=${page}&pageSize=${props.PageSize}`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
@@ -44,7 +44,7 @@ const News = (props) => {
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=in&category=${
       props.category
-    }&apiKey=385b53e5914b4385b91bd13366d71a13&page=${page + 1}&pageSize=${
+    }&apiKey=yourapikey&page=${page + 1}&pageSize=${
       props.PageSize
     }`;
     setPage(page + 1);

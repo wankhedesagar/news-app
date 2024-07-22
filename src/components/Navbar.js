@@ -66,10 +66,3 @@ const Navbar = () =>  {
   }
 
 export default Navbar;
-// business
-// entertainment
-// general
-// health
-// science
-// sports
-// technology
