@@ -131,10 +131,3 @@ const App = () => {
 };
 
 export default App;
-// business
-// entertainment
-// general
-// health
-// science
-// sports
-// technology

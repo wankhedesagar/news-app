@@ -11,7 +11,6 @@ const News = (props) => {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
-
   //this is for capitalizeCode for Heading
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -19,7 +18,6 @@ const News = (props) => {
 
   //this for title code
   document.title = ` ${capitalizeFirstLetter(props.category)} - News`;
-
 
   //this code use to call api, fetch and update function
   const updateNews = async () => {
@@ -43,21 +41,13 @@ const News = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  //   const handlePreClick = async () => {
-  //     setPage(page - 1);
-  //     updateNews();
-  //   };
-
-  //   const handleNextClick = async () => {
-  //     setPage(page + 1);
-  //     updateNews();
-  //   };
-
-
-
   const fetchMoreData = async () => {
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=385b53e5914b4385b91bd13366d71a13&page=${page+1}&pageSize=${props.PageSize}`;
-      setPage(page + 1);
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${
+      props.category
+    }&apiKey=385b53e5914b4385b91bd13366d71a13&page=${page + 1}&pageSize=${
+      props.PageSize
+    }`;
+    setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
